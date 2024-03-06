@@ -1,10 +1,16 @@
 class AllStaff:
+    staff = []
     def __init__(self, name, age, id, job):
         self.name = name
         self.age = age
         self.id = id
         self.job = job
+        AllStaff.staff.append(self)
 
+    def print_details(self):
+        for employee in AllStaff.staff:
+            if employee == self:
+                print(f" Employee {self.name} age {self.age} is employee #{self.id} works in {self.job}")
     def show(self):
         print(f" Employee {self.name} age {self.age} is employee #{self.id} works in {self.job}")
 
@@ -42,3 +48,5 @@ e3 = Factory("Jake", 16, "ID 125", "Labourer")
 e3.show()
 print()
 
+for employee in range(len(AllStaff.staff)):
+    print(AllStaff.show(AllStaff.staff[employee]))
