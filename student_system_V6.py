@@ -88,6 +88,9 @@ def count_students():
                 return f"\nThere are {count} students in {subject}"
             else:
                 return f"\nThere are no students in {subject}"
+    for teacher in teacher_list:
+        if subject == teacher.subject:
+            return f"The teacher for class {subject} is {teacher.name}"
 
 
 def find_student(text):
@@ -178,9 +181,9 @@ while choice != "Q":
                    f"2) Print a full list of students\n"
                    f"3) Find a student\n"
                    f"4) Find all students of a specific age\n"
-                   f"5) Delete student"
-                   f"6) Add student"
-                   f"7) Add full teacher list"
+                   f"5) Delete student\n"
+                   f"6) Add student\n"
+                   f"7) Add full teacher list\n"
                    f"Press 'Q' to quit\n").upper()
     if choice == "1":
         print(count_students())
